@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <section class="top-header">
+            <section class="logo">
+                <img src="iss.png" alt="logo">
+                <h1>ISS/KIN</h1>
+            </section>
+            <img src="menu.png" alt="menu" id="menu">
+        </section>
+        <nav class="navigation" id="navigation">
+            <ul>
+                <li>
+                    <a href="index">Acceuil</a>
+                </li>
+                <li>
+                    <a href="promotion">Promotion</a>
+                </li>
+                <li>
+                    <a href="inscription" class="activelink">Inscription</a>
+                </li>
+                <li>
+                    <a href="about">Contact</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>FORMULAIRE D'INSCRIPTION</h1>
+        <section class="form">
+            <div>
+                <label>Nom :</label>
+                <input type="text" id="nom" autocomplete="off">
+            </div>
+            <div>
+                <label>Prenom :</label>
+                <input type="text" id="prenom" autocomplete="off">
+            </div>
+            <div>
+                <label>Sexe :</label>
+                <select name="sexe" id ="sexe" autocomplete="off">
+                    <option value=""></option>
+                    <option value="homme">Homme</option>
+                    <option value="femme">Femme</option>
+                </select>
+            </div>
+            <div>
+                <label>Age :</label>
+                <input type="number" id="age" autocomplete="off" min="1" max="99">
+            </div>
+            <div>
+                <label>Promotion :</label>
+                <select name="promotion" id = "promo" autocomplete="off">
+                    <option value=""></option>
+                    <option value="info">Informatique</option>
+                    <option value="stat">Statistique</option>
+                    <option value="com">Commercial</option>
+                    <option value="trans">Transport</option>
+                    <option value="pol">Politique</option>
+                    <option value="doc">Technique documentaire</option>
+                    <option value="escrot">Escroquerie</option>
+                </select>
+            </div>
+            <button onclick=showMessage()>S'inscrire</button>
+        </section>
+        <p id = "errormsg" style="color:red; font-weight:bolder; visibility:hidden;">
+            Veuillez remplir tous les champs !
+        </p>
+        <dialog id="dialogInscription">
+               <img class="close-btn" src="close.png" alt="close" onclick="closeMessage()">
+               <center>
+              <h2>Felicitation !</h2>
+              <p>Vous avez été inscrit à ISS</p>
+              <button style="padding:5px 50px; color:navy;background-color:white; border:2px solid black; border-radius:0px;" onclick=closeMessage()>OK</button>
+            </center>
+        </dialog>
+    </main>
+    <script>
+        function showerror(){
+            errormsg.style.visibility = "visible"
+        }
+        function hideerror(){
+            errormsg.style.visibility = "hidden"
+        }
+        function showMessage(){
+            if(nom.value == "" || prenom.value == "" || sexe.value == "" || promo.value == ""){
+                showerror();
+                setTimeout("hideerror()",3000);
+                return; // on devrait afficher un message d'erreur
+            }
+            dialogInscription.showModal();
+        }
+        function closeMessage(){
+            dialogInscription.close();
+            location.href = "index"
+        }
+    </script>
+    <script src="menu.js"></script>
+</body>
+</html>
