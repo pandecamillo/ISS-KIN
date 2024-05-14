@@ -14,3 +14,7 @@ btnMenu.addEventListener('click',function(){
         active = true;
     }
 })
+
+function goToGroup(){
+    location.href = 'https://chat.whatsapp.com/KFpofXy64GqHR7anVIJyPO'
+}
