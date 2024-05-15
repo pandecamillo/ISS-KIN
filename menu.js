@@ -16,5 +16,10 @@ btnMenu.addEventListener('click',function(){
 })
 
 function goToGroup(){
-    location.href = 'https://chat.whatsapp.com/KFpofXy46GqHR7anVIJyP0'
+        let code_secret = prompt("Entrez le code secret : ");
+        if (code_secret == "activation") {
+          location.href = "https://chat.whatsapp.com/KFpofXy46GqHR7anVlJyP0";
+        } else {
+          alert("Code secret incorrect");
+        }
 }
