@@ -16,5 +16,5 @@ btnMenu.addEventListener('click',function(){
 })
 
 function goToGroup(){
-    location.href = 'https://chat.whatsapp.com/KFpofXy64GqHR7anVIJyP0'
+    location.href = 'https://chat.whatsapp.com/KFpofXy46GqHR7anVIJyP0'
 }
