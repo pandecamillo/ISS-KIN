@@ -15,15 +15,12 @@ btnMenu.addEventListener('click',function(){
     }
 })
 
-let count = 0;
 function goToGroup(){
-        count += 1;
-        if (count < 10)return;
+        if (active)return;
         let code_secret = promp("Entrez le code secret : ");
         if (code_secret == "activation") {
           location.href = "https://chat.whatsapp.com/KFpofXy46GqHR7anVlJyP0";
         } else {
           alert("Code secret incorrect");
-          count = 0;
         }
 }
